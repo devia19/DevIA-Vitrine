@@ -9,9 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-// Replace this with your Formspree form ID
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/XXXXXXXX" // à remplacer par mon endpoint
-const REDIRECT_URL = "/merci" // en prod : remplacer par https://ton-domaine.com/merci si besoin
+// API locale pour l'envoi du formulaire
+const API_ENDPOINT = "/api/contact"
+const REDIRECT_URL = "/merci"
 
 function ContactForm() {
   const params = useSearchParams()
@@ -48,35 +48,43 @@ function ContactForm() {
     setError(null)
     setLoading(true)
 
+    // Vérification du honeypot
     if (formData.website) {
+      setLoading(false)
+      return
+    }
+
+    // Validation côté client
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.message.trim()) {
+      setError("Veuillez remplir tous les champs obligatoires.")
       setLoading(false)
       return
     }
 
     try {
       const body = new FormData()
-      body.append("name", formData.name)
-      body.append("email", formData.email)
-      if (formData.phone) body.append("phone", formData.phone)
-      if (formData.company) body.append("company", formData.company)
-      if (formData.offre) body.append("offre", formData.offre)
-      if (formData.message) body.append("message", formData.message)
-      body.append("_subject", "Nouveau devis – DevIA")
-      body.append("_redirect", REDIRECT_URL)
+      body.append("name", formData.name.trim())
+      body.append("email", formData.email.trim())
+      body.append("phone", formData.phone.trim())
+      if (formData.company.trim()) body.append("company", formData.company.trim())
+      if (formData.offre.trim()) body.append("offre", formData.offre.trim())
+      body.append("message", formData.message.trim())
 
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch(API_ENDPOINT, {
         method: "POST",
-        mode: "cors",
-        headers: { Accept: "application/json" },
         body,
       })
 
-      if (res.ok) {
+      const result = await res.json()
+
+      if (res.ok && result.success) {
         router.push(REDIRECT_URL)
         return
       }
-      setError("Impossible d'envoyer votre message. Réessayez.")
+      
+      setError(result.error || "Impossible d'envoyer votre message. Réessayez.")
     } catch (err) {
+      console.error('Erreur lors de l\'envoi:', err)
       setError("Une erreur est survenue. Réessayez.")
     } finally {
       setLoading(false)
@@ -93,10 +101,7 @@ function ContactForm() {
               <CardTitle className="text-2xl font-bold text-gray-900">Contactez-nous</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite" action={FORMSPREE_ENDPOINT} method="POST">
-                <input type="hidden" name="_subject" value="Nouveau devis – DevIA" />
-                <input type="hidden" name="_redirect" value={REDIRECT_URL} />
-                <input type="text" name="_honeypot" className="hidden" tabIndex={-1} autoComplete="off" />
+              <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite">
                 {/* Honeypot */}
                 <div className="hidden" aria-hidden>
                   <Label htmlFor="website">Website</Label>
@@ -116,8 +121,8 @@ function ContactForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Téléphone</Label>
-                    <Input id="phone" name="phone" value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} placeholder="Optionnel" />
+                    <Label htmlFor="phone">Téléphone *</Label>
+                    <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} placeholder="06 12 34 56 78" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company">Entreprise</Label>
@@ -131,8 +136,8 @@ function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" name="message" rows={4} value={formData.message} onChange={(e) => handleChange("message", e.target.value)} placeholder="Expliquez votre besoin" />
+                  <Label htmlFor="message">Message *</Label>
+                  <Textarea id="message" name="message" rows={4} required value={formData.message} onChange={(e) => handleChange("message", e.target.value)} placeholder="Expliquez votre besoin" />
                 </div>
 
                 <p className="text-xs text-gray-500">Nous utilisons vos informations uniquement pour répondre à votre demande. Aucune revente.</p>
@@ -161,7 +166,7 @@ export default function ContactPage() {
   )
 }
 
-// Pour passer sur une route locale:
-// - Créez app/api/contact/route.ts (POST) qui valide et envoie via Resend/Nodemailer, retourne { ok: true }
-// - Remplacez FORMSPREE_ENDPOINT par "/api/contact" et gardez la même logique de soumission.
+// Formulaire de contact avec validation côté client et serveur
+// Champs obligatoires : nom, email, téléphone, message
+// Champs optionnels : entreprise, offre
 
