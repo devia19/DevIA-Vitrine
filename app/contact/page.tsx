@@ -9,15 +9,16 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-// API locale pour l'envoi du formulaire
-const API_ENDPOINT = "/api/contact"
-const REDIRECT_URL = "/merci"
+// Web3Forms endpoint avec votre clé publique
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit"
+const WEB3FORMS_ACCESS_KEY = "ecd43919-26f9-4bdd-a428-f4dd8644f60d"
 
 function ContactForm() {
   const params = useSearchParams()
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState(false)
 
   const offreFromQuery = useMemo(() => {
     const value = params.get("offre") || ""
@@ -32,7 +33,6 @@ function ContactForm() {
     company: "",
     offre: offreFromQuery,
     message: "",
-    website: "", // honeypot
   })
 
   useEffect(() => {
@@ -48,12 +48,6 @@ function ContactForm() {
     setError(null)
     setLoading(true)
 
-    // Vérification du honeypot
-    if (formData.website) {
-      setLoading(false)
-      return
-    }
-
     // Validation côté client
     if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.message.trim()) {
       setError("Veuillez remplir tous les champs obligatoires.")
@@ -62,27 +56,36 @@ function ContactForm() {
     }
 
     try {
-      const body = new FormData()
-      body.append("name", formData.name.trim())
-      body.append("email", formData.email.trim())
-      body.append("phone", formData.phone.trim())
-      if (formData.company.trim()) body.append("company", formData.company.trim())
-      if (formData.offre.trim()) body.append("offre", formData.offre.trim())
-      body.append("message", formData.message.trim())
-
-      const res = await fetch(API_ENDPOINT, {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        body,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company: formData.company.trim() || undefined,
+          offre: formData.offre.trim() || undefined,
+          message: formData.message.trim(),
+          subject: "Nouveau contact DevIA",
+          from_name: "DevIA Contact Form",
+          replyto: formData.email.trim(),
+        }),
       })
 
-      const result = await res.json()
+      const result = await response.json()
 
-      if (res.ok && result.success) {
-        router.push(REDIRECT_URL)
-        return
+      if (result.success) {
+        setSuccess(true)
+        setTimeout(() => {
+          router.push("/merci")
+        }, 2000)
+      } else {
+        setError("Impossible d'envoyer votre message. Réessayez.")
       }
-      
-      setError(result.error || "Impossible d'envoyer votre message. Réessayez.")
     } catch (err) {
       console.error('Erreur lors de l\'envoi:', err)
       setError("Une erreur est survenue. Réessayez.")
@@ -90,6 +93,13 @@ function ContactForm() {
       setLoading(false)
     }
   }
+
+  // Redirection après succès
+  useEffect(() => {
+    if (success) {
+      router.push("/merci")
+    }
+  }, [success, router])
 
   return (
     <div className="min-h-screen">
@@ -102,11 +112,6 @@ function ContactForm() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite">
-                {/* Honeypot */}
-                <div className="hidden" aria-hidden>
-                  <Label htmlFor="website">Website</Label>
-                  <Input id="website" name="website" value={formData.website} onChange={(e) => handleChange("website", e.target.value)} tabIndex={-1} autoComplete="off" />
-                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -146,6 +151,10 @@ function ContactForm() {
                   <p className="text-sm text-red-600" role="status">{error}</p>
                 )}
 
+                {success && (
+                  <p className="text-sm text-green-600" role="status">Message envoyé avec succès ! Redirection en cours...</p>
+                )}
+
                 <Button type="submit" disabled={loading} className="w-full md:w-auto">
                   {loading ? "Envoi..." : "Envoyer"}
                 </Button>
@@ -166,7 +175,8 @@ export default function ContactPage() {
   )
 }
 
-// Formulaire de contact avec validation côté client et serveur
+// Formulaire de contact avec Web3Forms
 // Champs obligatoires : nom, email, téléphone, message
 // Champs optionnels : entreprise, offre
+// Clé publique Web3Forms configurée
 
