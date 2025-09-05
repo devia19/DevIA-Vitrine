@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, Zap } from "lucide-react"
 
@@ -15,10 +16,14 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
-              <div className="w-5 h-5 text-white font-bold text-sm">D</div>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">DevIA</span>
+            <Image
+              src="/logo-devia.png"
+              alt="DevIA"
+              width={32}
+              height={32}
+              priority
+            />
+            <span className="text-xl font-bold text-gray-900">DevIA</span>
           </Link>
 
           {/* Desktop Navigation */}
