@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "DevIA — Assistant IA téléphonique 24/7",
   description:
     "Automatisez vos appels entrants, prenez des rendez-vous et renseignez vos clients automatiquement avec notre agent IA.",
+  icons: {
+    icon: "/logo-devia.png",
+    shortcut: "/logo-devia.png",
+    apple: "/logo-devia.png",
+  },
   openGraph: {
     title: "DevIA — Assistant IA téléphonique 24/7",
     description:
