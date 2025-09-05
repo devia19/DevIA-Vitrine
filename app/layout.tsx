@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   description:
     "Automatisez vos appels entrants, prenez des rendez-vous et renseignez vos clients automatiquement avec notre agent IA.",
   icons: {
-    icon: "/logo-devia.png",
+    icon: [
+      { url: "/logo-devia.png", sizes: "32x32" },
+      { url: "/logo-devia.png", sizes: "64x64" },
+      { url: "/logo-devia.png", sizes: "180x180" },
+    ],
     shortcut: "/logo-devia.png",
     apple: "/logo-devia.png",
   },

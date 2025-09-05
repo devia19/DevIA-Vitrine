@@ -19,8 +19,8 @@ export const Navigation = () => {
             <Image
               src="/logo-devia.png"
               alt="DevIA"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               priority
             />
             <span className="text-xl font-bold text-gray-900">DevIA</span>
