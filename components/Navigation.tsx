@@ -17,7 +17,7 @@ export const Navigation = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo-devia.png"
+              src="/placeholder-logo.svg"
               alt="DevIA"
               width={32}
               height={32}
