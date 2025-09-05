@@ -37,7 +37,7 @@ export const Hero = () => {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link href="/signup">
+            <Link href="/contact">
               <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" />
                 Commencer gratuitement

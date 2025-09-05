@@ -71,3 +71,4 @@ Le formulaire est maintenant :
 - ✅ Compatible avec Vercel Analytics
 
 Votre formulaire Web3Forms est opérationnel ! 🚀
+
