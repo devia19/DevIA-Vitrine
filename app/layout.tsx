@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     icon: [
       { url: "/logo-devia.png", sizes: "32x32" },
       { url: "/logo-devia.png", sizes: "64x64" },
+      { url: "/logo-devia.png", sizes: "96x96" },
+      { url: "/logo-devia.png", sizes: "128x128" },
+      { url: "/logo-devia.png", sizes: "192x192" },
+      { url: "/logo-devia.png", sizes: "256x256" },
+      { url: "/logo-devia.png", sizes: "512x512" },
       { url: "/logo-devia.png", sizes: "180x180" },
     ],
     shortcut: "/logo-devia.png",
