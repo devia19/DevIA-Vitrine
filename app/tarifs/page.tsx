@@ -2,69 +2,35 @@ import { Navigation } from "@/components/Navigation"
 import { Pricing } from "@/components/Pricing"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, X, HelpCircle, ArrowRight, Clock, TrendingUp, PhoneOff, Zap } from "lucide-react"
+import { HelpCircle, ArrowRight, Clock, TrendingUp, PhoneOff, Zap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 
-const comparisonFeatures = [
-  {
-    category: "Appels",
-    features: [
-      { name: "Appels mensuels", starter: "50", professional: "150", enterprise: "Illimité" },
-      { name: "Réponse automatique", starter: true, professional: true, enterprise: true },
-      { name: "Transfert d'appels", starter: false, professional: true, enterprise: true },
-      { name: "Enregistrement des appels", starter: false, professional: true, enterprise: true },
-      { name: "Dépassement quota", starter: "0,50€/appel", professional: "0,50€/appel", enterprise: "Inclus" },
-    ],
-  },
-  {
-    category: "IA et Personnalisation",
-    features: [
-      { name: "IA conversationnelle", starter: "Basique", professional: "Avancée", enterprise: "Personnalisée" },
-      { name: "Langues supportées", starter: "1", professional: "1", enterprise: "Illimitées" },
-      { name: "Personnalisation voix", starter: false, professional: false, enterprise: true },
-      { name: "Scripts personnalisés", starter: false, professional: true, enterprise: true },
-    ],
-  },
-  {
-    category: "Intégrations",
-    features: [
-      { name: "Google Calendar", starter: true, professional: true, enterprise: true },
-      { name: "Outlook", starter: false, professional: true, enterprise: true },
-      { name: "CRM intégrations", starter: false, professional: true, enterprise: true },
-      { name: "API complète", starter: false, professional: false, enterprise: true },
-    ],
-  },
-  {
-    category: "Support",
-    features: [
-      { name: "Support email", starter: true, professional: true, enterprise: true },
-      { name: "Support prioritaire", starter: false, professional: true, enterprise: true },
-      { name: "Support téléphonique", starter: false, professional: false, enterprise: true },
-      { name: "Account manager dédié", starter: false, professional: false, enterprise: true },
-    ],
-  },
-]
-
 const faqs = [
   {
-    question: "Puis-je changer de plan à tout moment ?",
+    question: "Comment fonctionne l'audit gratuit ?",
     answer:
-      "Oui, vous pouvez upgrader ou downgrader votre plan à tout moment. Les changements prennent effet immédiatement.",
+      "Nous analysons vos processus, vos outils existants et vos besoins spécifiques. Nous vous présentons ensuite une proposition d'automatisation adaptée avec un devis détaillé. L'audit est gratuit et sans engagement.",
   },
   {
-    question: "Que se passe-t-il si je dépasse mon quota d'appels ?",
+    question: "Combien coûte une automatisation ?",
     answer:
-      "Vous recevrez une notification avant d'atteindre votre limite. Vous pouvez alors upgrader votre plan ou des frais supplémentaires s'appliqueront.",
+      "Le coût dépend de votre secteur, du périmètre à automatiser (appels, emails, notifications, intégrations...) et de la complexité. Après l'audit gratuit, nous vous proposons un devis sur-mesure transparent, sans surprise.",
   },
   {
-    question: "Y a-t-il une période d'engagement ?",
-    answer: "Non, tous nos plans sont sans engagement. Vous pouvez annuler à tout moment.",
+    question: "Puis-je choisir seulement certaines automatisations ?",
+    answer:
+      "Bien sûr ! Vous pouvez commencer par une automatisation spécifique (par exemple l'agent téléphonique IA) et en ajouter d'autres progressivement. Chaque automatisation est conçue pour fonctionner seule ou en complément des autres.",
   },
   {
-    question: "Comment fonctionne l'essai gratuit ?",
+    question: "Comment se passe la mise en place dans mes outils ?",
     answer:
-      "7 jours d'essai gratuit complet (10 appels), sans carte de crédit requise. Vous avez accès à toutes les fonctionnalités du plan choisi.",
+      "Nous installons les automatisations directement dans vos outils existants : nous nous connectons à vos agendas, CRM, boîtes email, etc. Vous gardez le contrôle, nous assurons la synchronisation et le fonctionnement optimal.",
+  },
+  {
+    question: "Y a-t-il un engagement de durée ?",
+    answer:
+      "Non, pas d'engagement. Nous proposons des automatisations que vous utilisez au quotidien. Si vous souhaitez arrêter, nous vous aidons à récupérer vos données et à fermer proprement les intégrations.",
   },
 ]
 
@@ -76,13 +42,14 @@ export default function PricingPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-6 bg-accent text-white px-4 py-2 text-sm font-medium">Tarifs transparents</Badge>
+          <Badge className="mb-6 bg-accent text-white px-4 py-2 text-sm font-medium">Devis sur-mesure</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Choisissez le plan{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">parfait</span>
+            Des automatisations{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">adaptées à votre activité</span>
           </h1>
           <p className="text-lg text-gray-600">
-            Tous nos plans incluent un essai gratuit de 7 jours (10 appels). Pas de frais cachés, pas d'engagement.
+            Chaque entreprise est unique. DevIA vous propose un audit gratuit pour comprendre vos besoins et concevoir 
+            des automatisations sur-mesure. Pas de tarifs fixes, mais des solutions adaptées à votre secteur et votre périmètre.
           </p>
         </div>
       </section>
@@ -91,8 +58,11 @@ export default function PricingPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pourquoi choisir DevIA ?</h2>
-            <p className="text-xl text-gray-600">Des résultats concrets et mesurables pour votre entreprise</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pendant que vous lisez ceci, vous perdez des clients</h2>
+            <p className="text-xl text-gray-700 font-medium mb-4">
+              <strong>3 appels non répondus = 150€ de CA perdu. Par jour. Multipliez par 30 = 4 500€/mois.</strong>
+            </p>
+            <p className="text-lg text-gray-600">Automatisez maintenant. Vos concurrents ne vous attendent pas.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -101,10 +71,11 @@ export default function PricingPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900">Gagnez jusqu'à 10 heures par mois</CardTitle>
+                <CardTitle className="text-2xl font-bold text-gray-900">10h par semaine gagnées</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">L'IA s'occupe de vos appels, vos rendez-vous, vos rappels.</p>
+                <p className="text-gray-700 font-medium mb-2"><strong>Fini les tâches répétitives qui vous tuent.</strong></p>
+                <p className="text-gray-600">Appels, emails, relances, notifications : tout s'automatise. Votre équipe se concentre sur ce qui rapporte vraiment.</p>
               </CardContent>
             </Card>
 
@@ -113,10 +84,11 @@ export default function PricingPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-accent" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900">+30% de réservations en moyenne</CardTitle>
+                <CardTitle className="text-2xl font-bold text-gray-900">+30% de rendez-vous en plus</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Vos clients peuvent réserver à toute heure, même hors horaires.</p>
+                <p className="text-gray-700 font-medium mb-2"><strong>Zéro appel manqué = zéro client perdu.</strong></p>
+                <p className="text-gray-600">Votre système répond 24/7, prend des RDV, envoie des confirmations. Même quand vous dormez, vous gagnez de l'argent.</p>
               </CardContent>
             </Card>
 
@@ -125,58 +97,73 @@ export default function PricingPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <PhoneOff className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900">0 appel manqué = 0 client perdu</CardTitle>
+                <CardTitle className="text-2xl font-bold text-gray-900">4 500€/mois sauvés</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Soyez disponible 24h/24 sans être devant le téléphone.</p>
+                <p className="text-gray-700 font-medium mb-2"><strong>Arrêtez de perdre des clients par manque de réactivité.</strong></p>
+                <p className="text-gray-600">Chaque appel non répondu = CA perdu. Avec l'automatisation, vous ne ratez plus rien. Votre CA explose.</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Comparison with alternatives */}
+      {/* How it works */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comparaison avec les alternatives</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comment ça se passe ?</h2>
+            <p className="text-xl text-gray-600">Un processus simple pour des automatisations sur-mesure</p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-lg shadow-lg">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Solution</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Coût mensuel</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Disponibilité</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Appels traités</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Temps de mise en place</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="px-6 py-4 text-sm text-gray-900 font-medium">Secrétaire humaine</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">1200 €</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">35h/semaine</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">200 max</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Délai d'embauche long</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-gray-900 font-medium">Standard téléphonique externe</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">250–400 €</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Limité, pas personnalisé</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">100–150</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Abonnement rigide</td>
-                </tr>
-                <tr className="bg-gradient-to-r from-primary/5 to-accent/5">
-                  <td className="px-6 py-4 text-sm font-bold text-primary">DevIA</td>
-                  <td className="px-6 py-4 text-sm font-bold text-primary">79,99 € – 139,99 €</td>
-                  <td className="px-6 py-4 text-sm font-bold text-primary">24h/24 – 7j/7</td>
-                  <td className="px-6 py-4 text-sm font-bold text-primary">Jusqu'à 200+</td>
-                  <td className="px-6 py-4 text-sm font-bold text-primary">Installation immédiate</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <Card className="text-center border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900">Diagnostic gratuit</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Nous analysons vos processus, vos outils et vos besoins pour identifier les automatisations qui vous feront gagner le plus de temps.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">2</span>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900">Proposition sur-mesure</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Nous vous présentons un devis détaillé avec les automatisations proposées, adaptées à votre secteur et votre périmètre.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">3</span>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900">Mise en place</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Nous installons les automatisations directement dans vos outils existants : agendas, CRM, emails, téléphone...</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-0 shadow-lg">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">4</span>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900">Ajustements & accompagnement</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Nous affinons les automatisations selon vos retours et vous accompagnons dans leur utilisation au quotidien.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -184,74 +171,68 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <Pricing />
 
-      {/* Detailed Comparison Table */}
+      {/* Services Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comparaison détaillée des plans</h2>
-            <p className="text-xl text-gray-600">Toutes les fonctionnalités en détail</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ce que DevIA peut automatiser pour vous</h2>
+            <p className="text-xl text-gray-600">Une offre complète d'automatisation adaptée à votre secteur</p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-lg shadow-lg">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Fonctionnalités</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Indépendants</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Pro PME/TPE</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Entreprises</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {comparisonFeatures.map((category, categoryIndex) => (
-                  <>
-                    <tr key={categoryIndex} className="bg-gray-50">
-                      <td colSpan={4} className="px-6 py-3 text-sm font-semibold text-gray-900">
-                        {category.category}
-                      </td>
-                    </tr>
-                    {category.features.map((feature, featureIndex) => (
-                      <tr key={`${categoryIndex}-${featureIndex}`}>
-                        <td className="px-6 py-4 text-sm text-gray-900">{feature.name}</td>
-                        <td className="px-6 py-4 text-center text-sm">
-                          {typeof feature.starter === "boolean" ? (
-                            feature.starter ? (
-                              <Check className="w-5 h-5 text-accent mx-auto" />
-                            ) : (
-                              <X className="w-5 h-5 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="text-gray-600">{feature.starter}</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-center text-sm">
-                          {typeof feature.professional === "boolean" ? (
-                            feature.professional ? (
-                              <Check className="w-5 h-5 text-accent mx-auto" />
-                            ) : (
-                              <X className="w-5 h-5 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="text-gray-600">{feature.professional}</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-center text-sm">
-                          {typeof feature.enterprise === "boolean" ? (
-                            feature.enterprise ? (
-                              <Check className="w-5 h-5 text-accent mx-auto" />
-                            ) : (
-                              <X className="w-5 h-5 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="text-gray-600">{feature.enterprise}</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Agents téléphoniques IA</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Réponse automatique 24/7, prise de rendez-vous, renseignements clients. Un cas d'usage phare de notre offre d'automatisation.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Automatisation des emails</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Confirmations, relances, rappels de rendez-vous, suivi client. Vos emails sont envoyés automatiquement au bon moment.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Synchronisation des outils</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Agendas (Google, Outlook, Calendly), CRM, outils métiers. Tous vos outils synchronisés en temps réel.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Notifications automatiques</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">SMS, email, WhatsApp... Des notifications intelligentes pour votre équipe et vos clients selon vos règles.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Automatisations sectorielles</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Hôtels, garages, cabinets, indépendants... Des automatisations spécifiques à votre secteur d'activité.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-gray-900">Sur-mesure complet</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Audit, conception, installation, accompagnement. Tout est pensé pour votre entreprise spécifiquement.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -261,7 +242,7 @@ export default function PricingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
-            <p className="text-xl text-gray-600">Tout ce que vous devez savoir sur nos tarifs</p>
+            <p className="text-xl text-gray-600">Tout ce que vous devez savoir sur nos automatisations sur-mesure</p>
           </div>
 
           <div className="space-y-6">
@@ -285,16 +266,20 @@ export default function PricingPage() {
       {/* Final CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Prêt à commencer ?</h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Rejoignez des centaines d'entreprises qui font déjà confiance à DevIA
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chaque jour d'attente, c'est de l'argent qui part</h2>
+          <p className="text-xl text-gray-700 font-medium mb-6">
+            <strong>Vous perdez déjà des clients. Ne perdez pas plus de temps.</strong>
+          </p>
+          <p className="text-lg text-gray-600 mb-12">
+            Des centaines d'entreprises automatisent déjà. Elles gagnent du temps et de l'argent pendant que vous réfléchissez. 
+            <strong> Le diagnostic est gratuit. Vous n'avez rien à perdre, tout à gagner.</strong>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Zap className="w-5 h-5 mr-2" />
-                Demander un devis
+                Arrêtez de perdre des clients – Diagnostic gratuit
               </Button>
             </Link>
             <Link href="/demo">
@@ -304,7 +289,7 @@ export default function PricingPage() {
                 className="w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
               >
                 <ArrowRight className="w-5 h-5 mr-2" />
-                Voir une démonstration
+                Voir des exemples concrets
               </Button>
             </Link>
           </div>

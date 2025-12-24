@@ -246,11 +246,15 @@ export default function Demo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-6 bg-primary text-white px-4 py-2 text-sm font-medium">Démo interactive</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Découvrez DevIA{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">en action</span>
+            Voyez comment{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">vos concurrents ne perdent plus de clients</span>
           </h1>
+          <p className="text-lg text-gray-700 font-medium mb-2">
+            <strong>Pendant que vous ratez des appels, d'autres entreprises automatisent et récupèrent vos clients.</strong>
+          </p>
           <p className="text-lg text-gray-600">
-            Écoutez des conversations réelles et découvrez comment notre IA gère différents types d'appels.
+            Écoutez des conversations réelles : voyez comment l'IA répond à tous les appels, prend des rendez-vous, 
+            ne rate jamais une opportunité. <strong>C'est ça, la différence.</strong>
           </p>
         </div>
       </section>
@@ -399,17 +403,17 @@ export default function Demo() {
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Prêt à essayer DevIA ?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Prêt à automatiser votre entreprise ?</h2>
           <p className="text-xl text-gray-600 mb-12">
-            Commencez votre essai gratuit de 7 jours (10 appels) et découvrez comment notre IA peut transformer votre
-            service client.
+            Découvrez comment DevIA peut transformer votre activité grâce à des automatisations sur-mesure. 
+            Planifiez un audit gratuit pour identifier les automatisations adaptées à votre entreprise.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup">
+            <Link href="/contact">
               <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" />
-                Essai gratuit 7 jours
+                Planifier un diagnostic gratuit
               </Button>
             </Link>
             <Link href="/tarifs">
@@ -419,7 +423,7 @@ export default function Demo() {
                 className="w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
               >
                 <ArrowRight className="w-5 h-5 mr-2" />
-                Voir les tarifs
+                En savoir plus
               </Button>
             </Link>
           </div>

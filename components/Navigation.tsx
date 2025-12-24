@@ -15,7 +15,7 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo-devia.png"
               alt="DevIA"
@@ -23,7 +23,6 @@ export const Navigation = () => {
               height={56}
               priority
             />
-            <span className="text-xl font-bold text-gray-900">DevIA</span>
           </Link>
 
           {/* Desktop Navigation */}

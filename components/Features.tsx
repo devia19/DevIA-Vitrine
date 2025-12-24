@@ -4,33 +4,33 @@ import { Phone, Calendar, MessageCircle, Clock, Info, BarChart3 } from "lucide-r
 const features = [
   {
     icon: Phone,
-    title: "Réponse automatique 24/7",
-    description: "Votre agent IA répond à tous les appels, même la nuit et les weekends.",
+    title: "Agents téléphoniques IA – Plus jamais d'appel manqué",
+    description: "Combien de clients avez-vous perdus cette semaine à cause d'appels non répondus ? Répondez à TOUS vos appels 24/7, même la nuit. Zéro client perdu.",
   },
   {
     icon: Calendar,
-    title: "Prise de rendez-vous intelligente",
-    description: "Synchronisation automatique avec votre agenda Google, Outlook ou Calendly.",
+    title: "Emails automatiques – Gagnez 5h par semaine",
+    description: "Arrêtez de passer des heures sur les confirmations et relances. Automatisez tout : emails, SMS, notifications. Votre système travaille pour vous.",
   },
   {
     icon: MessageCircle,
-    title: "Confirmations automatiques",
-    description: "SMS et emails de confirmation envoyés automatiquement.",
+    title: "Notifications automatiques – Ne ratez plus rien",
+    description: "SMS, email, WhatsApp... Vos clients et votre équipe sont toujours informés au bon moment. Plus de rendez-vous oubliés, plus d'opportunités manquées.",
   },
   {
     icon: Clock,
-    title: "Gestion des horaires",
-    description: "Configurez vos horaires d'ouverture et vos créneaux disponibles.",
+    title: "Synchronisation automatique – Tout connecté, zéro double saisie",
+    description: "Google Calendar, Outlook, Calendly, CRM... Tout se synchronise automatiquement. Plus besoin de recopier les informations partout. Gagnez 2h par semaine.",
   },
   {
     icon: Info,
-    title: "Informations client",
-    description: "Renseignez vos clients sur vos services, tarifs et disponibilités.",
+    title: "Automatisations sur-mesure – Adapté à VOTRE métier",
+    description: "Hôtels, garages, cabinets, salons, indépendants... Chaque secteur a ses besoins. Nous automatisons exactement ce qui vous fait perdre du temps.",
   },
   {
     icon: BarChart3,
-    title: "Analyses détaillées",
-    description: "Suivez vos appels, rendez-vous et performances en temps réel.",
+    title: "Résultats mesurables – 10h minimum gagnées par semaine",
+    description: "Voyez en temps réel combien d'heures vous gagnez, combien de rendez-vous en plus, combien de clients sauvés. Des chiffres concrets.",
   },
 ]
 
@@ -39,9 +39,13 @@ export const Features = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tout ce dont vous avez besoin</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Une solution complète pour automatiser vos appels entrants et améliorer votre service client.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ce que vous perdez chaque jour sans automatisation</h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium mb-4">
+            <strong>Appels non répondus → Clients perdus</strong> | <strong>Tâches répétitives → Temps gaspillé</strong> | <strong>Relances manuelles → Opportunités ratées</strong>
+          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Automatisez tout ça. <strong>Gagnez 10h par semaine minimum</strong> et multipliez vos prises de rendez-vous. 
+            Vos concurrents le font déjà. Pourquoi pas vous ?
           </p>
         </div>
 

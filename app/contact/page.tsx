@@ -108,7 +108,14 @@ function ContactForm() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="border-0 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-gray-900">Contactez-nous</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">Arrêtez de perdre des clients et du temps</CardTitle>
+              <p className="text-gray-700 mt-2 font-medium">
+                <strong>Combien d'appels ratez-vous par jour ? Combien d'heures passez-vous sur des tâches répétitives ?</strong>
+              </p>
+              <p className="text-gray-600 mt-2">
+                Décrivez ce qui vous fait perdre du temps et de l'argent. Nous vous proposons des automatisations concrètes 
+                pour gagner <strong>10h par semaine minimum</strong> et ne plus jamais rater un client.
+              </p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite">
@@ -141,8 +148,8 @@ function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea id="message" name="message" rows={4} required value={formData.message} onChange={(e) => handleChange("message", e.target.value)} placeholder="Expliquez votre besoin" />
+                  <Label htmlFor="message">Décrivez votre besoin d'automatisation *</Label>
+                  <Textarea id="message" name="message" rows={4} required value={formData.message} onChange={(e) => handleChange("message", e.target.value)} placeholder="Parlez-nous de votre activité, des tâches répétitives qui prennent du temps, des appels non répondus, des relances manuelles... Nous vous proposerons des automatisations adaptées." />
                 </div>
 
                 <p className="text-xs text-gray-500">Nous utilisons vos informations uniquement pour répondre à votre demande. Aucune revente.</p>
@@ -156,7 +163,7 @@ function ContactForm() {
                 )}
 
                 <Button type="submit" disabled={loading} className="w-full md:w-auto">
-                  {loading ? "Envoi..." : "Envoyer"}
+                  {loading ? "Envoi..." : "Envoyer ma demande d'automatisation"}
                 </Button>
               </form>
             </CardContent>

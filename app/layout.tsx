@@ -10,9 +10,21 @@ import AnalyticsLoader from "@/components/AnalyticsLoader"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DevIA — Assistant IA téléphonique 24/7",
+  title: "DevIA — Arrêtez de perdre des clients | Automatisations IA sur-mesure",
   description:
-    "Automatisez vos appels entrants, prenez des rendez-vous et renseignez vos clients automatiquement avec notre agent IA.",
+    "Ne ratez plus jamais un appel. Gagnez 10h par semaine en automatisant vos emails, appels et notifications. Agents téléphoniques IA, automatisations sur-mesure. Diagnostic gratuit.",
+  keywords: [
+    "agent téléphonique IA",
+    "automatisation entreprise",
+    "gain de temps",
+    "appels automatiques",
+    "emails automatiques",
+    "automatisation PME",
+    "agent IA vocal",
+    "automatisation CRM",
+    "gagner du temps entreprise",
+    "ne pas perdre de clients",
+  ],
   icons: {
     icon: [
       { url: "/logo-devia.png", sizes: "32x32" },
@@ -28,9 +40,9 @@ export const metadata: Metadata = {
     apple: "/logo-devia.png",
   },
   openGraph: {
-    title: "DevIA — Assistant IA téléphonique 24/7",
+    title: "DevIA — Arrêtez de perdre des clients | Automatisations IA sur-mesure",
     description:
-      "Automatisez vos appels entrants, prenez des rendez-vous et renseignez vos clients automatiquement avec notre agent IA.",
+      "Ne ratez plus jamais un appel. Gagnez 10h par semaine en automatisant vos emails, appels et notifications. Agents téléphoniques IA, automatisations sur-mesure. Diagnostic gratuit.",
     url: "https://devia.example.com",
     siteName: "DevIA",
     locale: "fr_FR",

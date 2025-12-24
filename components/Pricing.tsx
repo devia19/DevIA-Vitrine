@@ -8,17 +8,17 @@ import { Check, Zap, Star, Crown, Mail } from "lucide-react"
 
 const pricingPlans = [
   {
-    name: "Indépendants",
+    name: "Automatisations pour indépendants",
     price: "Sur devis",
-    description: "Parfait pour les travailleurs indépendants",
+    description: "Solutions d'automatisation adaptées aux indépendants",
     icon: Zap,
     features: [
-      "Jusqu'à 50 appels/mois",
-      "Réponses automatiques basiques",
-      "Prise de RDV simple",
-      "Support email",
-      "Intégration Google Calendar",
-      "Dépassement : 0,50€/appel ou passage à l'offre supérieure",
+      "Agent téléphonique IA (selon volume)",
+      "Automatisation des emails et relances",
+      "Synchronisation agenda",
+      "Notifications SMS/Email",
+      "Intégration avec vos outils existants",
+      "Accompagnement à la mise en place",
     ],
     buttonText: "Demander un devis",
     buttonVariant: "outline" as const,
@@ -26,19 +26,17 @@ const pricingPlans = [
     planType: "starter",
   },
   {
-    name: "Pro PME/TPE",
+    name: "Automatisations pour TPE / PME",
     price: "Sur devis",
-    description: "Pour les PME et TPE",
+    description: "Automatisations complètes pour PME et TPE",
     icon: Star,
     features: [
-      "Jusqu'à 150 appels/mois",
-      "IA conversationnelle avancée",
-      "Prise de RDV complexe",
-      "Confirmations SMS/Email",
-      "Intégrations multiples",
-      "Support prioritaire",
-      "Analyses détaillées",
-      "Dépassement : 0,50€/appel ou passage à l'offre supérieure",
+      "Agents téléphoniques IA personnalisés",
+      "Automatisation complète emails et notifications",
+      "Synchronisation multi-outils (CRM, agenda, outils métiers)",
+      "Automatisations sur-mesure selon votre secteur",
+      "Support et accompagnement dédiés",
+      "Ajustements et optimisations",
     ],
     buttonText: "Demander un devis",
     buttonVariant: "hero" as const,
@@ -46,20 +44,19 @@ const pricingPlans = [
     planType: "pro",
   },
   {
-    name: "Entreprises",
+    name: "Projet sur-mesure",
     price: "Sur mesure",
     description: "Solution personnalisée pour grandes entreprises",
     icon: Crown,
     features: [
-      "Appels illimités",
-      "IA personnalisée",
-      "Personnalisation de la voix",
-      "Multi-langues",
-      "API complète",
-      "Support dédié 24/7",
-      "Formation personnalisée",
-      "SLA garantis",
-      "Intégrations sur mesure",
+      "Audit complet de vos processus",
+      "Conception d'automatisations sur-mesure",
+      "Agents IA multi-langues et personnalisés",
+      "Intégrations complexes avec vos systèmes",
+      "API complète et connecteurs dédiés",
+      "Support et maintenance 24/7",
+      "Formation et accompagnement",
+      "Évolutivité et ajustements continus",
     ],
     buttonText: "Demander un devis",
     buttonVariant: "default" as const,
@@ -73,10 +70,13 @@ export const Pricing = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tarifs adaptés à votre entreprise</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choisissez le plan qui correspond à vos besoins. Tous nos plans incluent un essai gratuit de 7 jours (10
-            appels).
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Combien perdez-vous chaque mois sans automatisation ?</h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium mb-4">
+            <strong>Calcul rapide : 3 appels non répondus/jour × 50€ de CA = 4 500€ perdus par mois</strong>
+          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Nous analysons vos pertes et vous proposons des automatisations adaptées. 
+            <strong> Le diagnostic est gratuit. Vous avez tout à gagner, rien à perdre.</strong>
           </p>
         </div>
 
@@ -134,12 +134,12 @@ export const Pricing = () => {
 
         <div className="text-center">
           <p className="text-gray-600 mb-4">
-            Toutes les options incluent un essai gratuit de 7 jours (10 appels), sans engagement.
+            Chaque projet commence par un <strong>audit gratuit</strong> de vos besoins pour proposer la meilleure solution d'automatisation.
           </p>
           <p className="text-gray-600">
-            Besoin d'un plan personnalisé ?{" "}
+            Vous souhaitez discuter de votre projet d'automatisation ?{" "}
             <Link href="/contact" className="text-primary hover:underline">
-              Contactez-nous
+              Planifiez un diagnostic gratuit
             </Link>
           </p>
         </div>

@@ -23,67 +23,67 @@ import {
 
 const features = [
   {
-    category: "IA",
+    category: "Agents IA",
     icon: Bot,
-    title: "Agent IA Vocal Intelligent",
-    description: "Assistant vocal avancé capable de comprendre et répondre naturellement à vos clients.",
-    items: ["Voix naturelle et personnalisable", "Compréhension contextuelle", "Réponses adaptées à votre métier"],
+    title: "Agents téléphoniques IA",
+    description: "Répondez à tous vos appels 24/7, renseignez vos clients et prenez des rendez-vous automatiquement. Un cas d'usage phare de notre offre d'automatisation.",
+    items: ["Réponse automatique 24/7", "Voix naturelle et personnalisable", "Compréhension contextuelle", "Réponses adaptées à votre métier"],
   },
   {
-    category: "Gestion",
-    icon: Calendar,
-    title: "Prise de Rendez-vous Automatique",
-    description: "Synchronisation directe avec votre agenda pour une gestion optimale des créneaux",
-    items: ["Agenda temps réel", "Évite les doublons", "Confirmations automatiques"],
+    category: "Emails",
+    icon: Mail,
+    title: "Automatisation des emails",
+    description: "Confirmations, relances, rappels de rendez-vous, suivi client. Vos emails sont envoyés automatiquement au bon moment.",
+    items: ["Emails de confirmation automatiques", "Relances personnalisées", "Rappels de rendez-vous", "Suivi client automatisé"],
   },
   {
     category: "Communication",
     icon: MessageCircle,
-    title: "Messages & Notifications",
-    description: "Système complet de communication avec vos clients via SMS et email",
-    items: ["SMS de rappel", "Emails de confirmation", "Notifications en temps réel"],
+    title: "Notifications intelligentes",
+    description: "SMS, email, WhatsApp... Des notifications automatiques pour votre équipe et vos clients selon vos règles métier.",
+    items: ["SMS de rappel automatiques", "Notifications multi-canaux", "Alertes pour l'équipe", "Personnalisation selon le contexte"],
   },
   {
-    category: "Disponibilité",
-    icon: Clock,
-    title: "Disponibilité 24h/24",
-    description: "Votre assistant ne dort jamais et reste disponible même en dehors de vos horaires",
-    items: ["Service continu", "Aucun appel manqué", "Réactivité immédiate"],
+    category: "Intégration",
+    icon: Calendar,
+    title: "Synchronisation avec vos outils",
+    description: "Intégration avec vos agendas (Google, Outlook, Calendly), CRM, outils métiers pour une synchronisation temps réel.",
+    items: ["Agendas temps réel", "Synchronisation CRM", "Intégration outils métiers", "Évite les doublons"],
   },
   {
-    category: "IA",
+    category: "Secteurs",
     icon: Brain,
-    title: "Apprentissage Personnalisé",
-    description: "L'IA s'adapte à votre vocabulaire, vos services et votre façon de travailler",
-    items: ["Formation sur vos services", "Vocabulaire métier", "Amélioration continue"],
+    title: "Automatisations sur-mesure par secteur",
+    description: "Adaptées à votre secteur : hôtels, garages, cabinets, indépendants... Chaque automatisation est conçue pour votre activité.",
+    items: ["Formation sur vos services", "Vocabulaire métier spécifique", "Processus adaptés", "Amélioration continue"],
   },
   {
-    category: "Support",
+    category: "Accompagnement",
     icon: Headphones,
-    title: "Support Client Dédié",
-    description: "Équipe francophone disponible pour vous accompagner dans votre utilisation",
-    items: ["Support en français", "Formation incluse", "Assistance technique"],
+    title: "Accompagnement & Support",
+    description: "Équipe dédiée pour vous accompagner : audit, mise en place, ajustements et support au quotidien.",
+    items: ["Support en français", "Formation incluse", "Ajustements continus", "Assistance technique"],
   },
   {
-    category: "Analytique",
+    category: "Performance",
     icon: BarChart3,
-    title: "Tableau de Bord Analytique",
-    description: "Analysez vos performances et optimisez votre activité grâce aux données",
-    items: ["Statistiques détaillées", "Rapports personnalisés", "Indicateurs de performance"],
+    title: "Suivi & Optimisation",
+    description: "Analysez vos performances et l'impact de vos automatisations. Nous optimisons continuellement pour maximiser votre gain de temps.",
+    items: ["Statistiques détaillées", "Indicateurs de gain de temps", "Rapports personnalisés", "Optimisation continue"],
   },
   {
     category: "Sécurité",
     icon: Shield,
     title: "Sécurité & Confidentialité",
-    description: "Vos données et celles de vos clients sont protégées selon les standards européens",
-    items: ["Conformité RGPD", "Chiffrement des données", "Hébergement sécurisé"],
+    description: "Vos données et celles de vos clients sont protégées selon les standards européens. Installation dans vos outils existants.",
+    items: ["Conformité RGPD", "Chiffrement des données", "Installation sécurisée", "Hébergement sécurisé"],
   },
   {
     category: "Installation",
     icon: Zap,
-    title: "Installation Rapide",
-    description: "Mise en service en moins de 24h avec notre équipe d'experts",
-    items: ["Configuration express", "Formation incluse", "Support à l'installation"],
+    title: "Mise en place rapide",
+    description: "Installation dans vos outils existants avec notre équipe d'experts. Aucune disruption de votre activité.",
+    items: ["Configuration dans vos outils", "Formation incluse", "Support à l'installation", "Aucune disruption"],
   },
 ]
 
@@ -123,18 +123,23 @@ const integrations = [
 const steps = [
   {
     number: "01",
-    title: "Configuration",
-    description: "Notre équipe configure votre assistant selon vos besoins spécifiques en moins de 24h.",
+    title: "Diagnostic gratuit",
+    description: "Nous analysons vos processus, vos outils et vos besoins pour identifier les automatisations qui vous feront gagner le plus de temps.",
   },
   {
     number: "02",
-    title: "Formation",
-    description: "L'IA apprend votre vocabulaire métier, vos services et votre façon de communiquer.",
+    title: "Proposition sur-mesure",
+    description: "Nous vous présentons un devis détaillé avec les automatisations proposées, adaptées à votre secteur et votre périmètre.",
   },
   {
     number: "03",
-    title: "Activation",
-    description: "Votre assistant IA est opérationnel et prêt à gérer vos appels et rendez-vous.",
+    title: "Mise en place",
+    description: "Nous installons les automatisations directement dans vos outils existants : agendas, CRM, emails, téléphone...",
+  },
+  {
+    number: "04",
+    title: "Ajustements & accompagnement",
+    description: "Nous affinons les automatisations selon vos retours et vous accompagnons dans leur utilisation au quotidien.",
   },
 ]
 
@@ -146,15 +151,18 @@ export default function Fonctionnalites() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-primary text-white px-4 py-2 text-sm font-medium">Fonctionnalités Avancées</Badge>
+            <Badge className="mb-6 bg-primary text-white px-4 py-2 text-sm font-medium">Automatisations sur-mesure</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Tout ce dont vous avez besoin
+                Tout ce que vous perdez chaque jour peut être automatisé
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Découvrez toutes les fonctionnalités qui font de DevIA l'assistant IA vocal le plus complet pour votre
-              activité professionnelle.
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto font-medium mb-4">
+              <strong>Appels non répondus. Emails répétitifs. Relances manuelles. Double saisie.</strong>
+            </p>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Nous automatisons tout ça. <strong>Gagnez 10h par semaine minimum</strong>, ne ratez plus jamais un client, 
+              multipliez vos rendez-vous. Vos concurrents le font déjà. Pourquoi pas vous ?
             </p>
           </div>
 
@@ -238,11 +246,11 @@ export default function Fonctionnalites() {
           {/* How it works Section */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <Badge className="mb-6 bg-primary text-white px-4 py-2 text-sm font-medium">Comment ça marche</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mise en service en 3 étapes</h2>
+              <Badge className="mb-6 bg-primary text-white px-4 py-2 text-sm font-medium">Comment ça se passe</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mise en place en 4 étapes</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {steps.map((step, index) => (
                 <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
@@ -257,26 +265,30 @@ export default function Fonctionnalites() {
 
           {/* Final CTA */}
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Prêt à transformer votre activité ?</h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-              Rejoignez les centaines de professionnels qui ont déjà adopté DevIA pour automatiser leur gestion client.
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chaque jour d'attente, c'est de l'argent perdu</h2>
+            <p className="text-xl text-gray-700 font-medium mb-4 max-w-3xl mx-auto">
+              <strong>Vous perdez déjà des clients chaque jour. Ne perdez pas plus de temps.</strong>
+            </p>
+            <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+              Des centaines d'entreprises automatisent déjà et gagnent 10h par semaine. 
+              <strong> Le diagnostic est gratuit. Vous n'avez rien à perdre, tout à gagner.</strong>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo">
+              <Link href="/contact">
                 <Button variant="default" size="xl" className="w-full sm:w-auto bg-primary hover:bg-primary/90">
                   <Play className="w-5 h-5 mr-2" />
-                  Voir la démonstration
+                  Demander un audit gratuit
                 </Button>
               </Link>
-              <Link href="/tarifs">
+              <Link href="/demo">
                 <Button
                   variant="outline"
                   size="xl"
                   className="w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
                   <DollarSign className="w-5 h-5 mr-2" />
-                  Découvrir nos tarifs
+                  Voir des exemples concrets
                 </Button>
               </Link>
             </div>
